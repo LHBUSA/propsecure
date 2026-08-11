@@ -1,0 +1,9 @@
+{
+  "name": "propsecure-launch",
+  "version": "1.0.0",
+  "private": true,
+  "description": "PropSecure coming-soon landing page with Slack lead notifications",
+  "engines": {
+    "node": ">=20"
+  }
+}
