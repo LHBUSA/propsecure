@@ -4,10 +4,12 @@ A self-contained, responsive landing page for `propsecure.proptechusa.ai` with:
 
 - a premium red, white, and blue PropSecure design;
 - a responsive parcel-security dashboard concept;
-- waitlist and detailed early-access forms;
+- direct “Book an Integration” conversion paths to Calendly;
+- an enterprise integration brief form for lower-friction leads;
 - secure Slack lead delivery through a Vercel serverless function;
 - source, company, use case, volume, notes, page URL, and submission time in each Slack alert;
-- a honeypot field for basic bot filtering.
+- a honeypot field, origin checks, payload limits, and request timeouts;
+- complete JSON-LD, social metadata, favicon/PWA assets, robots, and sitemap discovery files.
 
 ## Deploy to Vercel
 
@@ -26,7 +28,7 @@ The Slack webhook stays on the server and is never exposed in `index.html`.
 4. Add a variable named `SLACK_WEBHOOK_URL` and paste the webhook URL as its value.
 5. Enable it for Production and Preview, save it, then redeploy.
 
-Each submission will arrive as a formatted `New PropSecure lead` message in the selected Slack channel.
+Each submission will arrive as a formatted `New PropSecure integration lead` message in the selected Slack channel.
 
 ## Connect the custom domain
 
@@ -39,9 +41,11 @@ Each submission will arrive as a formatted `New PropSecure lead` message in the 
 
 - `index.html` — the complete page, styles, graphics, responsive layout, and browser interactions.
 - `api/waitlist.js` — validates leads and forwards them to Slack.
-- `favicon.svg` — PropSecure shield favicon.
+- `favicon.svg`, `favicon.ico`, and PNG icons — the complete PropSecure browser and device icon set.
+- `og-image.png` — the 1200×630 social share image.
+- `site.webmanifest`, `robots.txt`, and `sitemap.xml` — PWA and search discovery assets.
 - `vercel.json` — Vercel function and security-header configuration.
-- `.env.example` — environment-variable name only; never commit a real webhook URL.
+- `env.example` — environment-variable name only; never commit a real webhook URL.
 
 ## Important
 
