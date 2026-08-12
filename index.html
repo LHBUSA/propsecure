@@ -1496,6 +1496,658 @@
         background: var(--red-500);
       }
 
+      .signal-lab-section {
+        position: relative;
+        overflow: hidden;
+        padding: 112px 0;
+        color: white;
+        background:
+          radial-gradient(circle at 85% 15%, rgba(45, 115, 232, 0.34), transparent 30%),
+          radial-gradient(circle at 12% 92%, rgba(223, 11, 29, 0.22), transparent 26%),
+          linear-gradient(132deg, #020e22 0%, #061d43 55%, #0a326d 100%);
+      }
+
+      .signal-lab-section::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        opacity: 0.11;
+        pointer-events: none;
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.13) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.13) 1px, transparent 1px);
+        background-size: 46px 46px;
+        mask-image: radial-gradient(circle at 65% 45%, black, transparent 78%);
+      }
+
+      .signal-lab-inner {
+        position: relative;
+        z-index: 2;
+      }
+
+      .signal-lab-head {
+        display: grid;
+        grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.65fr);
+        align-items: end;
+        gap: 80px;
+        margin-bottom: 42px;
+      }
+
+      .signal-lab-head .kicker {
+        color: #80adf4;
+      }
+
+      .signal-lab-head h2 {
+        max-width: 760px;
+        margin: 13px 0 0;
+        font-size: clamp(39px, 4.7vw, 61px);
+        line-height: 1.01;
+        letter-spacing: -0.055em;
+      }
+
+      .signal-lab-head p {
+        margin: 0;
+        color: #a9bad1;
+        font-size: 16px;
+        line-height: 1.72;
+      }
+
+      .signal-lab-shell {
+        display: grid;
+        grid-template-columns: minmax(285px, 0.72fr) minmax(0, 1.7fr);
+        overflow: hidden;
+        border: 1px solid rgba(132, 173, 230, 0.35);
+        border-radius: 24px;
+        background: #06172f;
+        box-shadow: 0 38px 90px rgba(0, 0, 0, 0.34);
+      }
+
+      .signal-lab-controls {
+        padding: 26px;
+        border-right: 1px solid #254568;
+        background: linear-gradient(160deg, #0a2445, #071a34);
+      }
+
+      .lab-status-row,
+      .lab-console-top,
+      .lab-event-head,
+      .lab-evidence-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+      }
+
+      .lab-status-row > span:first-child,
+      .lab-console-top > span:first-child {
+        color: #7e9abb;
+        font-size: 9px;
+        font-weight: 850;
+        letter-spacing: 0.11em;
+        text-transform: uppercase;
+      }
+
+      .lab-armed,
+      .lab-console-live {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        border: 1px solid rgba(76, 219, 158, 0.22);
+        border-radius: 999px;
+        background: rgba(43, 187, 125, 0.09);
+        color: #69dfad;
+        padding: 6px 9px;
+        font-size: 8px;
+        font-weight: 850;
+        letter-spacing: 0.06em;
+      }
+
+      .lab-armed::before,
+      .lab-console-live::before {
+        content: "";
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #47d89a;
+        box-shadow: 0 0 0 4px rgba(71, 216, 154, 0.1);
+      }
+
+      .lab-property {
+        display: grid;
+        grid-template-columns: 42px 1fr;
+        gap: 12px;
+        align-items: center;
+        margin-top: 20px;
+        padding: 16px;
+        border: 1px solid #2a4d74;
+        border-radius: 15px;
+        background: rgba(255, 255, 255, 0.035);
+      }
+
+      .lab-property-icon {
+        width: 42px;
+        height: 42px;
+        display: grid;
+        place-items: center;
+        border-radius: 12px;
+        color: #a9caff;
+        background: #103967;
+      }
+
+      .lab-property-icon svg {
+        width: 22px;
+        height: 22px;
+      }
+
+      .lab-property small,
+      .lab-property strong,
+      .lab-property span {
+        display: block;
+      }
+
+      .lab-property small {
+        color: #6886a8;
+        font-size: 7px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+      }
+
+      .lab-property strong {
+        margin-top: 5px;
+        font-size: 13px;
+      }
+
+      .lab-property span {
+        margin-top: 3px;
+        color: #7f96b3;
+        font-size: 9px;
+      }
+
+      .lab-control-label {
+        display: block;
+        margin-top: 23px;
+        color: #7895b7;
+        font-size: 8px;
+        font-weight: 850;
+        letter-spacing: 0.11em;
+        text-transform: uppercase;
+      }
+
+      .lab-event-tabs {
+        display: grid;
+        gap: 8px;
+        margin-top: 10px;
+      }
+
+      .lab-event-tab {
+        min-height: 58px;
+        display: grid;
+        grid-template-columns: 31px 1fr auto;
+        align-items: center;
+        gap: 10px;
+        border: 1px solid #294b72;
+        border-radius: 11px;
+        color: #a9bbd1;
+        background: #0a2547;
+        padding: 9px 11px;
+        text-align: left;
+        transition: border-color 0.18s ease, background 0.18s ease, transform 0.18s ease;
+      }
+
+      .lab-event-tab:hover,
+      .lab-event-tab:focus-visible {
+        border-color: #78a7ea;
+        outline: none;
+        background: #10335d;
+        transform: translateX(2px);
+      }
+
+      .lab-event-tab[aria-selected="true"] {
+        border-color: #ff4455;
+        color: white;
+        background: linear-gradient(135deg, rgba(205, 19, 38, 0.65), rgba(31, 83, 170, 0.68));
+        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+      }
+
+      .lab-event-tab > i {
+        width: 31px;
+        height: 31px;
+        display: grid;
+        place-items: center;
+        border-radius: 8px;
+        color: #a7c8f7;
+        background: rgba(255, 255, 255, 0.07);
+        font-size: 11px;
+        font-style: normal;
+        font-weight: 900;
+      }
+
+      .lab-event-tab span {
+        display: grid;
+        gap: 3px;
+      }
+
+      .lab-event-tab strong {
+        font-size: 10px;
+      }
+
+      .lab-event-tab small {
+        color: #718aa9;
+        font-size: 7px;
+      }
+
+      .lab-event-tab[aria-selected="true"] small {
+        color: #c9d8eb;
+      }
+
+      .lab-event-tab > em {
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.08);
+        color: #8ca7c8;
+        padding: 5px 7px;
+        font-size: 6px;
+        font-style: normal;
+        font-weight: 850;
+        letter-spacing: 0.05em;
+      }
+
+      .lab-fire-button {
+        width: 100%;
+        min-height: 52px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+        margin-top: 18px;
+        border: 0;
+        border-radius: 11px;
+        color: white;
+        background: linear-gradient(135deg, #e20d21, #f12b3d);
+        box-shadow: 0 14px 30px rgba(223, 11, 29, 0.23);
+        padding: 0 16px;
+        font-size: 10px;
+        font-weight: 850;
+        text-align: left;
+      }
+
+      .lab-fire-button:disabled {
+        opacity: 0.8;
+      }
+
+      .lab-fire-button > span:last-child {
+        font-size: 18px;
+      }
+
+      .signal-lab-console {
+        min-width: 0;
+        background: #06162c;
+      }
+
+      .lab-console-top {
+        min-height: 55px;
+        padding: 0 20px;
+        border-bottom: 1px solid #244365;
+        background: #081b34;
+      }
+
+      .lab-pipeline {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+        padding: 13px;
+        border-bottom: 1px solid #203e60;
+        background: #07182f;
+      }
+
+      .lab-pipeline-step {
+        min-height: 57px;
+        display: grid;
+        grid-template-columns: 29px 1fr;
+        align-items: center;
+        gap: 9px;
+        border: 1px solid #244569;
+        border-radius: 10px;
+        color: #7c95b3;
+        background: #0a2342;
+        padding: 8px 10px;
+        transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+      }
+
+      .lab-pipeline-step > i {
+        width: 29px;
+        height: 29px;
+        display: grid;
+        place-items: center;
+        border-radius: 8px;
+        background: #10315a;
+        font-size: 7px;
+        font-style: normal;
+        font-weight: 900;
+      }
+
+      .lab-pipeline-step b,
+      .lab-pipeline-step small {
+        display: block;
+      }
+
+      .lab-pipeline-step b {
+        font-size: 9px;
+      }
+
+      .lab-pipeline-step small {
+        margin-top: 3px;
+        color: #5f7a9a;
+        font-size: 6px;
+      }
+
+      .lab-pipeline-step.complete {
+        border-color: rgba(61, 209, 147, 0.3);
+        color: #bfe8d6;
+        background: rgba(18, 83, 70, 0.42);
+      }
+
+      .lab-pipeline-step.complete > i {
+        color: #67dcad;
+        background: rgba(63, 210, 150, 0.11);
+      }
+
+      .lab-pipeline-step.active {
+        border-color: #e43b4a;
+        color: white;
+        background: linear-gradient(135deg, rgba(205, 22, 41, 0.48), rgba(26, 75, 143, 0.54));
+        box-shadow: 0 0 0 3px rgba(225, 44, 61, 0.08);
+      }
+
+      .lab-console-body {
+        display: grid;
+        grid-template-columns: minmax(0, 1.08fr) minmax(255px, 0.92fr);
+        min-height: 462px;
+      }
+
+      .lab-event-stage {
+        min-width: 0;
+        padding: 22px;
+        border-right: 1px solid #203f62;
+      }
+
+      .lab-event-head > span:first-child,
+      .lab-evidence-head > span:first-child {
+        color: #718cae;
+        font-size: 8px;
+        font-weight: 850;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      .lab-event-state {
+        border-radius: 999px;
+        background: rgba(119, 148, 184, 0.1);
+        color: #7f9bbb;
+        padding: 6px 9px;
+        font-size: 7px;
+        font-weight: 850;
+        letter-spacing: 0.06em;
+      }
+
+      .signal-lab-shell.running .lab-event-state {
+        color: #8db8f6;
+        background: rgba(53, 119, 214, 0.13);
+      }
+
+      .signal-lab-shell.fired .lab-event-state {
+        color: #ff929d;
+        background: rgba(223, 11, 29, 0.13);
+      }
+
+      .lab-risk-panel {
+        display: grid;
+        grid-template-columns: 125px 1fr;
+        gap: 19px;
+        align-items: center;
+        margin-top: 20px;
+        padding: 19px;
+        border: 1px solid #294a70;
+        border-radius: 17px;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.045), rgba(31, 83, 152, 0.09));
+      }
+
+      .lab-risk-dial {
+        --risk-score: 18;
+        width: 112px;
+        height: 112px;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        background: conic-gradient(#ec2639 calc(var(--risk-score) * 1%), #18395f 0);
+        box-shadow: 0 0 0 7px rgba(255, 255, 255, 0.025);
+        transition: background 0.3s ease;
+      }
+
+      .lab-risk-dial::before {
+        content: "";
+        grid-area: 1 / 1;
+        width: 82px;
+        height: 82px;
+        border-radius: 50%;
+        background: #081d37;
+      }
+
+      .lab-risk-dial > span {
+        position: relative;
+        grid-area: 1 / 1;
+        display: grid;
+        gap: 3px;
+        text-align: center;
+      }
+
+      .lab-risk-dial strong {
+        font-size: 30px;
+        line-height: 1;
+      }
+
+      .lab-risk-dial small {
+        color: #6c87a7;
+        font-size: 6px;
+        font-weight: 850;
+        letter-spacing: 0.09em;
+      }
+
+      .lab-event-copy small,
+      .lab-event-copy strong,
+      .lab-event-copy span {
+        display: block;
+      }
+
+      .lab-event-copy small {
+        color: #6682a3;
+        font-size: 7px;
+        font-weight: 850;
+        letter-spacing: 0.08em;
+      }
+
+      .lab-event-copy strong {
+        margin-top: 8px;
+        font-size: 18px;
+        line-height: 1.22;
+      }
+
+      .lab-event-copy span {
+        margin-top: 7px;
+        color: #819ab8;
+        font-size: 10px;
+        line-height: 1.55;
+      }
+
+      .lab-event-feed {
+        display: grid;
+        gap: 8px;
+        margin-top: 16px;
+      }
+
+      .lab-feed-row {
+        display: grid;
+        grid-template-columns: 9px 1fr auto;
+        gap: 10px;
+        align-items: center;
+        border: 1px solid #223f61;
+        border-radius: 10px;
+        color: #8fa6c1;
+        background: rgba(255, 255, 255, 0.025);
+        padding: 11px 12px;
+        font-size: 8px;
+      }
+
+      .lab-feed-row > i {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: #51d69d;
+      }
+
+      .lab-feed-row > span {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+
+      .lab-feed-row > time {
+        color: #5e7898;
+        font-size: 7px;
+      }
+
+      .lab-feed-row.alert {
+        display: none;
+        border-color: rgba(229, 49, 67, 0.55);
+        color: white;
+        background: rgba(190, 19, 38, 0.16);
+      }
+
+      .signal-lab-shell.fired .lab-feed-row.alert {
+        display: grid;
+      }
+
+      .lab-feed-row.alert > i {
+        background: #ff4052;
+        box-shadow: 0 0 0 5px rgba(255, 64, 82, 0.1);
+      }
+
+      .lab-evidence-panel {
+        min-width: 0;
+        padding: 22px;
+        background: #071a33;
+      }
+
+      .lab-evidence-head > span:last-child {
+        color: #68dbac;
+        font-size: 7px;
+        font-weight: 850;
+      }
+
+      .lab-evidence-card {
+        margin-top: 20px;
+        border: 1px solid #294b70;
+        border-radius: 15px;
+        background: rgba(255, 255, 255, 0.035);
+        padding: 16px;
+      }
+
+      .lab-evidence-card > small {
+        color: #667f9e;
+        font-size: 7px;
+        font-weight: 850;
+        letter-spacing: 0.08em;
+      }
+
+      .lab-evidence-card > strong {
+        display: block;
+        margin-top: 8px;
+        font-size: 13px;
+        line-height: 1.3;
+      }
+
+      .lab-evidence-list {
+        display: grid;
+        gap: 8px;
+        margin: 16px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .lab-evidence-list li {
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+        color: #8fa5bf;
+        font-size: 9px;
+        line-height: 1.45;
+      }
+
+      .lab-evidence-list li::before {
+        content: "✓";
+        color: #55d9a3;
+        font-weight: 900;
+      }
+
+      .lab-route-card {
+        margin-top: 10px;
+        border: 1px solid rgba(223, 11, 29, 0.32);
+        border-radius: 15px;
+        background: linear-gradient(135deg, rgba(201, 18, 37, 0.15), rgba(26, 75, 145, 0.12));
+        padding: 16px;
+      }
+
+      .lab-route-card small,
+      .lab-route-card strong,
+      .lab-route-card span {
+        display: block;
+      }
+
+      .lab-route-card small {
+        color: #e87985;
+        font-size: 7px;
+        font-weight: 850;
+        letter-spacing: 0.08em;
+      }
+
+      .lab-route-card strong {
+        margin-top: 7px;
+        font-size: 13px;
+      }
+
+      .lab-route-card span {
+        margin-top: 5px;
+        color: #8199b7;
+        font-size: 8px;
+        line-height: 1.45;
+      }
+
+      .signal-lab-proof {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+        margin-top: 12px;
+      }
+
+      .signal-lab-proof span {
+        min-height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 7px;
+        border: 1px solid rgba(121, 160, 211, 0.25);
+        border-radius: 10px;
+        color: #9fb4cf;
+        background: rgba(255, 255, 255, 0.035);
+        font-size: 9px;
+        font-weight: 750;
+        text-align: center;
+      }
+
+      .signal-lab-proof span::before {
+        content: "✓";
+        color: #56dda8;
+      }
+
       .surveillance-section {
         position: relative;
         overflow: hidden;
@@ -3660,6 +4312,24 @@
           grid-template-columns: repeat(2, minmax(0, 1fr));
         }
 
+        .signal-lab-head {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+
+        .signal-lab-shell {
+          grid-template-columns: 1fr;
+        }
+
+        .signal-lab-controls {
+          border-right: 0;
+          border-bottom: 1px solid #254568;
+        }
+
+        .lab-event-tabs {
+          grid-template-columns: repeat(3, 1fr);
+        }
+
         .use-grid {
           grid-template-columns: repeat(2, 1fr);
         }
@@ -3988,6 +4658,33 @@
           padding: 76px 0;
         }
 
+        .signal-lab-section {
+          padding: 78px 0;
+        }
+
+        .signal-lab-head h2 {
+          font-size: clamp(38px, 11.4vw, 51px);
+        }
+
+        .lab-event-tabs,
+        .lab-console-body,
+        .signal-lab-proof {
+          grid-template-columns: 1fr;
+        }
+
+        .lab-event-stage {
+          border-right: 0;
+          border-bottom: 1px solid #203f62;
+        }
+
+        .lab-pipeline {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .lab-risk-panel {
+          grid-template-columns: 1fr;
+        }
+
         .insurance-section {
           padding: 78px 0;
         }
@@ -4273,7 +4970,7 @@
         </a>
 
         <nav class="nav-links" id="nav-links" aria-label="Primary navigation">
-          <a href="#surveillance">Signals</a>
+          <a href="#signal-lab">Live Demo</a>
           <a href="#insurance">Insurance <span class="nav-badge">New</span></a>
           <a href="#platform">Integration</a>
           <a href="#use-cases">Industries</a>
@@ -4485,6 +5182,94 @@
                 <li>Integrated review and escalation</li>
               </ul>
             </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="signal-lab-section" id="signal-lab" aria-labelledby="signal-lab-title">
+        <div class="container signal-lab-inner">
+          <div class="signal-lab-head" data-reveal>
+            <div>
+              <span class="kicker">Live risk-event sandbox</span>
+              <h2 id="signal-lab-title">Fire the alert. Watch the operating layer respond.</h2>
+            </div>
+            <p>Select a material property event, run it through a live sample ruleset, and watch PropSecure detect, qualify, evidence, and route the exception.</p>
+          </div>
+
+          <div class="signal-lab-shell" data-alert-lab data-reveal>
+            <aside class="signal-lab-controls" aria-label="Risk event controls">
+              <div class="lab-status-row"><span>Sandbox / 01</span><span class="lab-armed">WATCHLIST ARMED</span></div>
+              <div class="lab-property">
+                <span class="lab-property-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3 20 6v6c0 5-3 8-8 10-5-2-8-5-8-10V6l8-3Z"/><path d="m7 12 5-4 5 4v5H7v-5Z"/></svg>
+                </span>
+                <span><small>MONITORED PROPERTY</small><strong>1234 Main Street</strong><span>Parcel 17-09-123-004 · Hennepin County</span></span>
+              </div>
+
+              <span class="lab-control-label">Choose a simulated event</span>
+              <div class="lab-event-tabs" role="tablist" aria-label="Simulated risk events">
+                <button class="lab-event-tab" type="button" role="tab" aria-selected="true" data-alert-event="ownership">
+                  <i>01</i><span><strong>Ownership transfer</strong><small>Recorded deed activity</small></span><em>REVIEW</em>
+                </button>
+                <button class="lab-event-tab" type="button" role="tab" aria-selected="false" data-alert-event="lien">
+                  <i>02</i><span><strong>Tax lien recorded</strong><small>Collateral impairment</small></span><em>CRITICAL</em>
+                </button>
+                <button class="lab-event-tab" type="button" role="tab" aria-selected="false" data-alert-event="hazard">
+                  <i>03</i><span><strong>Flood risk changed</strong><small>Physical exposure</small></span><em>REVIEW</em>
+                </button>
+              </div>
+
+              <button class="lab-fire-button" type="button" data-fire-alert>
+                <span data-fire-label>Fire ownership alert</span><span aria-hidden="true">→</span>
+              </button>
+            </aside>
+
+            <div class="signal-lab-console" aria-live="polite">
+              <div class="lab-console-top"><span>PROPSECURE EVENT ENGINE</span><span class="lab-console-live">SOURCE MONITORING LIVE</span></div>
+              <div class="lab-pipeline" aria-label="Alert processing pipeline">
+                <span class="lab-pipeline-step complete" data-alert-step="resolve"><i>✓</i><span><b>Resolve</b><small>parcel identity</small></span></span>
+                <span class="lab-pipeline-step" data-alert-step="detect"><i>02</i><span><b>Detect</b><small>source change</small></span></span>
+                <span class="lab-pipeline-step" data-alert-step="qualify"><i>03</i><span><b>Qualify</b><small>client rules</small></span></span>
+                <span class="lab-pipeline-step" data-alert-step="route"><i>04</i><span><b>Route</b><small>system + owner</small></span></span>
+              </div>
+
+              <div class="lab-console-body">
+                <div class="lab-event-stage">
+                  <div class="lab-event-head"><span>Composite property risk</span><span class="lab-event-state" data-alert-state>READY TO SIMULATE</span></div>
+                  <div class="lab-risk-panel">
+                    <div class="lab-risk-dial" data-alert-dial style="--risk-score: 18"><span><strong data-alert-score>18</strong><small>RISK SCORE</small></span></div>
+                    <div class="lab-event-copy"><small data-alert-severity>BASELINE / MONITORED</small><strong data-alert-title>Ownership transfer</strong><span data-alert-description>Waiting for a material deed or ownership change across configured county sources.</span></div>
+                  </div>
+                  <div class="lab-event-feed" aria-label="Monitoring event feed">
+                    <div class="lab-feed-row"><i></i><span>Parcel identity reverified</span><time>09:41:58</time></div>
+                    <div class="lab-feed-row"><i></i><span>Recorder source heartbeat received</span><time>09:42:04</time></div>
+                    <div class="lab-feed-row alert"><i></i><span data-alert-feed>Warranty deed change qualified</span><time>NOW</time></div>
+                  </div>
+                </div>
+
+                <div class="lab-evidence-panel">
+                  <div class="lab-evidence-head"><span>Evidence package</span><span>VERIFIED SOURCES</span></div>
+                  <div class="lab-evidence-card">
+                    <small data-alert-evidence-label>OWNERSHIP + DEED</small>
+                    <strong data-alert-evidence-title>County recorder change set</strong>
+                    <ul class="lab-evidence-list">
+                      <li data-alert-evidence="0">Grantor identity changed</li>
+                      <li data-alert-evidence="1">Document #2026-184921</li>
+                      <li data-alert-evidence="2">County recorder verified</li>
+                    </ul>
+                  </div>
+                  <div class="lab-route-card">
+                    <small>CLIENT-DEFINED ROUTE</small>
+                    <strong data-alert-route>Title + underwriting review</strong>
+                    <span data-alert-route-detail>Webhook → case queue · human review required</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="signal-lab-proof" aria-label="Alert contract proof">
+            <span>Canonical parcel identity</span><span>Source-level evidence</span><span>Customer-owned rules</span><span>System-ready routing</span>
           </div>
         </div>
       </section>
@@ -5347,6 +6132,163 @@
             }
           });
         });
+
+        const alertLab = document.querySelector("[data-alert-lab]");
+        if (alertLab) {
+          const eventTabs = [...alertLab.querySelectorAll("[data-alert-event]")];
+          const fireButton = alertLab.querySelector("[data-fire-alert]");
+          const fireLabel = alertLab.querySelector("[data-fire-label]");
+          const eventState = alertLab.querySelector("[data-alert-state]");
+          const score = alertLab.querySelector("[data-alert-score]");
+          const dial = alertLab.querySelector("[data-alert-dial]");
+          const severity = alertLab.querySelector("[data-alert-severity]");
+          const title = alertLab.querySelector("[data-alert-title]");
+          const description = alertLab.querySelector("[data-alert-description]");
+          const feed = alertLab.querySelector("[data-alert-feed]");
+          const evidenceLabel = alertLab.querySelector("[data-alert-evidence-label]");
+          const evidenceTitle = alertLab.querySelector("[data-alert-evidence-title]");
+          const evidenceItems = [...alertLab.querySelectorAll("[data-alert-evidence]")];
+          const route = alertLab.querySelector("[data-alert-route]");
+          const routeDetail = alertLab.querySelector("[data-alert-route-detail]");
+          const pipelineSteps = [...alertLab.querySelectorAll("[data-alert-step]")];
+          const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+          let selectedEvent = "ownership";
+          let alertTimers = [];
+
+          const alertEvents = {
+            ownership: {
+              fire: "Fire ownership alert",
+              title: "Ownership transfer",
+              description: "Waiting for a material deed or ownership change across configured county sources.",
+              firedDescription: "A new warranty deed changed the owner of record and crossed the configured title-review rule.",
+              score: 64,
+              severity: "REVIEW / IDENTITY CHANGED",
+              state: "MATERIAL CHANGE QUALIFIED",
+              feed: "Warranty deed change qualified",
+              evidenceLabel: "OWNERSHIP + DEED",
+              evidenceTitle: "County recorder change set",
+              evidence: ["Grantor identity changed", "Document #2026-184921", "County recorder verified"],
+              route: "Title + underwriting review",
+              routeDetail: "Webhook → case queue · human review required"
+            },
+            lien: {
+              fire: "Fire tax-lien alert",
+              title: "Tax lien recorded",
+              description: "Waiting for a lien, default, or delinquency event across configured public-record sources.",
+              firedDescription: "A new county tax lien impaired the collateral position and crossed the immediate-escalation threshold.",
+              score: 86,
+              severity: "CRITICAL / COLLATERAL RISK",
+              state: "CRITICAL EVENT ROUTED",
+              feed: "County tax lien qualified",
+              evidenceLabel: "LIEN + DELINQUENCY",
+              evidenceTitle: "Recorded lien evidence",
+              evidence: ["Tax lien amount · $18,420", "Instrument #TL-2026-9381", "County filing verified"],
+              route: "Servicing + enterprise risk",
+              routeDetail: "Priority webhook → risk case · SLA clock started"
+            },
+            hazard: {
+              fire: "Fire flood-risk alert",
+              title: "Flood risk changed",
+              description: "Waiting for a material hazard designation or physical-exposure change at the parcel.",
+              firedDescription: "The parcel moved into a higher flood-risk designation and crossed the configured renewal-review rule.",
+              score: 74,
+              severity: "REVIEW / EXPOSURE CHANGED",
+              state: "HAZARD CHANGE QUALIFIED",
+              feed: "Flood designation change qualified",
+              evidenceLabel: "HAZARD + EXPOSURE",
+              evidenceTitle: "Parcel risk designation",
+              evidence: ["Flood zone AE detected", "Effective map revision · 2026", "Parcel geometry intersected"],
+              route: "Underwriting + loss control",
+              routeDetail: "Event API → renewal queue · inspection suggested"
+            }
+          };
+
+          const clearAlertTimers = () => {
+            alertTimers.forEach((timer) => window.clearTimeout(timer));
+            alertTimers = [];
+          };
+
+          const resetAlertLab = () => {
+            clearAlertTimers();
+            const config = alertEvents[selectedEvent];
+            alertLab.classList.remove("running", "fired");
+            fireButton.disabled = false;
+            fireLabel.textContent = config.fire;
+            eventState.textContent = "READY TO SIMULATE";
+            score.textContent = "18";
+            dial.style.setProperty("--risk-score", "18");
+            severity.textContent = "BASELINE / MONITORED";
+            title.textContent = config.title;
+            description.textContent = config.description;
+            feed.textContent = config.feed;
+            evidenceLabel.textContent = config.evidenceLabel;
+            evidenceTitle.textContent = config.evidenceTitle;
+            evidenceItems.forEach((item, index) => { item.textContent = config.evidence[index]; });
+            route.textContent = config.route;
+            routeDetail.textContent = config.routeDetail;
+            pipelineSteps.forEach((step, index) => {
+              step.classList.toggle("complete", index === 0);
+              step.classList.remove("active");
+              step.querySelector("i").textContent = index === 0 ? "✓" : `0${index + 1}`;
+            });
+          };
+
+          const setPipelineState = (activeIndex) => {
+            pipelineSteps.forEach((step, index) => {
+              step.classList.toggle("complete", index < activeIndex);
+              step.classList.toggle("active", index === activeIndex);
+              step.querySelector("i").textContent = index < activeIndex ? "✓" : `0${index + 1}`;
+            });
+          };
+
+          eventTabs.forEach((tab) => {
+            tab.addEventListener("click", () => {
+              selectedEvent = tab.dataset.alertEvent;
+              eventTabs.forEach((item) => item.setAttribute("aria-selected", String(item === tab)));
+              resetAlertLab();
+            });
+          });
+
+          fireButton.addEventListener("click", () => {
+            resetAlertLab();
+            const config = alertEvents[selectedEvent];
+            const delays = reduceMotion ? [0, 0, 0] : [260, 680, 1080];
+            alertLab.classList.add("running");
+            fireButton.disabled = true;
+            fireLabel.textContent = "Monitoring configured sources…";
+            eventState.textContent = "SCANNING SOURCE CHANGES";
+            setPipelineState(1);
+
+            alertTimers.push(window.setTimeout(() => {
+              eventState.textContent = "CHANGE DETECTED";
+              setPipelineState(2);
+            }, delays[0]));
+
+            alertTimers.push(window.setTimeout(() => {
+              eventState.textContent = "APPLYING CLIENT RULES";
+              setPipelineState(3);
+            }, delays[1]));
+
+            alertTimers.push(window.setTimeout(() => {
+              alertLab.classList.remove("running");
+              alertLab.classList.add("fired");
+              pipelineSteps.forEach((step) => {
+                step.classList.add("complete");
+                step.classList.remove("active");
+                step.querySelector("i").textContent = "✓";
+              });
+              score.textContent = String(config.score);
+              dial.style.setProperty("--risk-score", String(config.score));
+              severity.textContent = config.severity;
+              description.textContent = config.firedDescription;
+              eventState.textContent = config.state;
+              fireButton.disabled = false;
+              fireLabel.textContent = "Replay this alert";
+            }, delays[2]));
+          });
+
+          resetAlertLab();
+        }
 
         const revealElements = document.querySelectorAll("[data-reveal]");
         if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
