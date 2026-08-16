@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 980" role="img" aria-labelledby="title desc">
+  <title id="title">PropSecure property surveillance illustration</title>
+  <desc id="desc">A premium aerial property scene with parcel boundary, security shield, risk signals, and monitoring overlays.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#eaf3ff"/><stop offset="1" stop-color="#b9d4f4"/></linearGradient>
+    <linearGradient id="ground" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#dfe9df"/><stop offset="1" stop-color="#b7cdb8"/></linearGradient>
+    <linearGradient id="road" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#9ba9b7"/><stop offset="1" stop-color="#687786"/></linearGradient>
+    <linearGradient id="roof" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#4f6680"/><stop offset="1" stop-color="#23364e"/></linearGradient>
+    <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#ffffff"/><stop offset="1" stop-color="#d9e2ec"/></linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#9fc8f1"/><stop offset="1" stop-color="#416b99"/></linearGradient>
+    <linearGradient id="shield" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#12499a"/><stop offset="1" stop-color="#061b3d"/></linearGradient>
+    <radialGradient id="halo"><stop stop-color="#3177df" stop-opacity=".32"/><stop offset="1" stop-color="#3177df" stop-opacity="0"/></radialGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="28" stdDeviation="28" flood-color="#071f49" flood-opacity=".25"/></filter>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="18"/></filter>
+    <filter id="glow" x="-80%" y="-80%" width="260%" height="260%"><feDropShadow dx="0" dy="0" stdDeviation="14" flood-color="#f0182b" flood-opacity=".8"/></filter>
+    <pattern id="grid" width="70" height="70" patternUnits="userSpaceOnUse"><path d="M70 0H0V70" fill="none" stroke="#0b2e68" stroke-opacity=".06"/></pattern>
+  </defs>
+  <rect width="1400" height="980" rx="54" fill="url(#sky)"/>
+  <rect width="1400" height="980" rx="54" fill="url(#grid)"/>
+  <ellipse cx="880" cy="330" rx="420" ry="330" fill="url(#halo)"/>
+  <path d="M-80 790 490 420 1510 800 1510 1050-80 1050Z" fill="url(#ground)"/>
+  <path d="M-60 825 475 492 1510 840 1510 990 560 660 30 980Z" fill="url(#road)" opacity=".88"/>
+  <path d="M-80 690 390 410 1510 760" fill="none" stroke="#f7f9fc" stroke-width="18" opacity=".92"/>
+  <path d="M210 948 570 700 1270 933" fill="none" stroke="#dbe4ec" stroke-width="9" stroke-dasharray="44 30" opacity=".78"/>
+  <g opacity=".6">
+    <circle cx="160" cy="590" r="54" fill="#5d8b65"/><circle cx="218" cy="560" r="38" fill="#779c77"/>
+    <circle cx="1140" cy="710" r="62" fill="#5d8b65"/><circle cx="1210" cy="680" r="44" fill="#769e79"/>
+    <circle cx="1060" cy="280" r="45" fill="#678f6c"/><circle cx="1110" cy="255" r="31" fill="#87aa87"/>
+  </g>
+  <g filter="url(#shadow)" transform="translate(420 272)">
+    <path d="M80 250 370 70 735 205 435 392Z" fill="#eef3f7" opacity=".88"/>
+    <path d="M105 230 367 85 690 204 432 365Z" fill="url(#wall)"/>
+    <path d="M367 85 690 204 620 275 340 168Z" fill="url(#roof)"/>
+    <path d="M105 230 367 85 340 168 150 278Z" fill="#71869b"/>
+    <path d="M150 278 340 168 620 275 432 365Z" fill="#f7f9fb"/>
+    <path d="M340 168 620 275 620 390 340 286Z" fill="#e7edf3"/>
+    <path d="M150 278 340 168 340 286 150 397Z" fill="#ffffff"/>
+    <path d="M400 233 500 270 500 346 400 309Z" fill="url(#glass)"/>
+    <path d="M520 279 580 302 580 367 520 345Z" fill="url(#glass)"/>
+    <path d="M205 276 283 232 283 311 205 356Z" fill="url(#glass)"/>
+    <path d="M303 221 332 204 332 284 303 301Z" fill="#c7d2dd"/>
+    <path d="M112 387 432 205 708 312 392 499Z" fill="none" stroke="#f0182b" stroke-width="7" stroke-linejoin="round" filter="url(#glow)"/>
+    <path d="M112 387 432 205 708 312 392 499Z" fill="#f0182b" fill-opacity=".055"/>
+  </g>
+  <g transform="translate(880 118)" filter="url(#shadow)">
+    <circle cx="0" cy="0" r="132" fill="#ffffff" fill-opacity=".74"/>
+    <path d="M0-94 84-63v62c0 57-33 96-84 122C-51 95-84 56-84-1v-62L0-94Z" fill="#fff" stroke="#e8eef7" stroke-width="8"/>
+    <path d="M0-76 67-51v51c0 46-25 77-67 100C-42 77-67 46-67 0v-51L0-76Z" fill="url(#shield)"/>
+    <path d="m-31 1 22 22 45-54" fill="none" stroke="#fff" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g font-family="Inter,Arial,sans-serif" filter="url(#shadow)">
+    <g transform="translate(105 122)"><rect width="310" height="108" rx="22" fill="#fff" fill-opacity=".94" stroke="#d9e6f5"/><circle cx="42" cy="38" r="10" fill="#0a9b5b"/><text x="66" y="43" fill="#071f49" font-size="20" font-weight="800">PARCEL VERIFIED</text><text x="42" y="77" fill="#667a96" font-size="17">Canonical identity established</text></g>
+    <g transform="translate(1035 232)"><rect width="258" height="124" rx="22" fill="#071f49" fill-opacity=".95"/><circle cx="42" cy="39" r="11" fill="#f0182b"/><text x="66" y="44" fill="#fff" font-size="19" font-weight="800">RISK EVENT</text><text x="42" y="80" fill="#b7c9df" font-size="16">Tax lien detected</text><text x="42" y="104" fill="#ff7d88" font-size="14" font-weight="700">REVIEW REQUIRED</text></g>
+    <g transform="translate(930 706)"><rect width="322" height="112" rx="22" fill="#fff" fill-opacity=".95" stroke="#d9e6f5"/><text x="36" y="39" fill="#071f49" font-size="18" font-weight="800">EVIDENCE ATTACHED</text><text x="36" y="72" fill="#64758e" font-size="16">Source · time · parcel · rule</text><path d="M266 53h28M282 39l14 14-14 14" fill="none" stroke="#3177df" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></g>
+  </g>
+  <g stroke="#3177df" stroke-width="3" fill="none" stroke-dasharray="10 12" opacity=".58"><path d="M420 177C560 118 690 126 764 180"/><path d="M1008 344C927 406 892 505 922 678"/><path d="M404 702C311 626 253 531 275 399"/></g>
+  <g fill="#3177df"><circle cx="419" cy="177" r="8"/><circle cx="764" cy="180" r="8"/><circle cx="1008" cy="344" r="8"/><circle cx="922" cy="678" r="8"/></g>
+</svg>
