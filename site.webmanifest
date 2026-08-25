@@ -1,13 +1,13 @@
 {
-  "name": "PropSecure — Property Security Infrastructure",
+  "name": "PropSecure — Continuous Property Change Intelligence",
   "short_name": "PropSecure",
-  "description": "Enterprise property verification, portfolio monitoring, and risk intelligence from PropTechUSA.ai.",
+  "description": "Continuous property identity, surveillance, evidence, decision rules, and enterprise event routing from PropTechUSA.ai.",
   "id": "/",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#071f49",
+  "background_color": "#06162c",
+  "theme_color": "#06162c",
   "icons": [
     {
       "src": "/favicon.svg",
