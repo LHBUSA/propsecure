@@ -1,9 +1,11 @@
 # PropSecure landing page
 
-A self-contained, responsive landing page for `propsecure.proptechusa.ai` with:
+A self-contained, responsive enterprise site for `propsecure.proptechusa.ai` with:
 
 - a premium red, white, and blue PropSecure design;
-- a responsive parcel-security dashboard concept;
+- a responsive property change-intelligence and event-routing experience;
+- current 225M+ identity and four-market PropData positioning;
+- global identity, jurisdiction-scoped surveillance, and governed delivery architecture;
 - direct “Book an Integration” conversion paths to Calendly;
 - an enterprise integration brief form for lower-friction leads;
 - secure Slack lead delivery through a Vercel serverless function;

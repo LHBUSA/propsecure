@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="PropSecure property trust infrastructure">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="PropSecure continuous property change intelligence">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop stop-color="#03142f"/>
@@ -40,7 +40,7 @@
   <g transform="translate(72 478)">
     <circle cx="8" cy="8" r="8" fill="#2ecf82"/>
     <path d="m4 8 3 3 5-6" fill="none" stroke="#fff" stroke-width="2"/>
-    <text x="27" y="15" fill="#ffffff" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="650">Powered by PropData’s 166M+ U.S. parcel network</text>
+    <text x="27" y="15" fill="#ffffff" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="650">Powered by PropData’s 225M+ global identity network</text>
   </g>
 
   <g transform="translate(842 76)" filter="url(#shadow)">
