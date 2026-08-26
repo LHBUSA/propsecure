@@ -1,20 +1,20 @@
 (()=>{
-  const VERSION='20260826-art-v1';
+  const VERSION='20260826-art-v2';
   const base=document.createElement('script');
   base.src='/assets/propsecure-site-base.js?v='+VERSION;
   base.defer=true;
   document.head.appendChild(base);
 
   const ART={
-    hero:'/api/art?name=hero&v='+VERSION,
-    evidence:'/api/art?name=evidence&v='+VERSION,
-    portfolio:'/api/art?name=portfolio&v='+VERSION
+    hero:'/assets/propsecure-hero-property.svg?v='+VERSION,
+    evidence:'/assets/propsecure-evidence-chain.svg?v='+VERSION,
+    portfolio:'/assets/propsecure-portfolio-watch.svg?v='+VERSION
   };
 
   const installStyle=()=>{
-    if(document.getElementById('propsecure-art-v7-style'))return;
+    if(document.getElementById('propsecure-art-v8-style'))return;
     const style=document.createElement('style');
-    style.id='propsecure-art-v7-style';
+    style.id='propsecure-art-v8-style';
     style.textContent=`
       .cinematic-frame-v7{position:relative!important;overflow:hidden!important;padding:0!important;border:1px solid rgba(91,157,255,.34)!important;border-radius:24px!important;background:#020819!important;box-shadow:0 30px 84px rgba(0,0,0,.38),0 0 56px rgba(31,111,255,.08)!important}
       .cinematic-frame-v7:after{content:"";position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 0 1px rgba(255,255,255,.02),inset 0 -60px 80px rgba(2,8,25,.08)}
@@ -37,6 +37,7 @@
 
   const upgradeImage=(img,src,alt)=>{
     if(!img)return;
+    img.onerror=null;
     img.src=src;
     img.width=1200;
     img.height=675;
