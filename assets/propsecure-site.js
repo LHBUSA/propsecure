@@ -1,55 +1,5 @@
 (()=>{
   const qs=(s,r=document)=>r.querySelector(s),qsa=(s,r=document)=>[...r.querySelectorAll(s)];
-
-  const artwork=[
-    {from:'propsecure-hero-property.svg',to:'/assets/propsecure-hero-custom.webp',width:1024,height:576,alt:'PropSecure monitoring a protected property across parcel, document, market, and risk signals',priority:true},
-    {from:'propsecure-evidence-chain.svg',to:'/assets/propsecure-documents-custom.webp',width:1024,height:576,alt:'PropSecure connecting deed, title, mortgage, and official-record evidence to one monitored property'},
-    {from:'propsecure-portfolio-watch.svg',to:'/assets/propsecure-portfolio-custom.webp',width:1024,height:576,alt:'PropSecure portfolio surveillance monitoring multiple properties and surfacing material risk events'}
-  ];
-  qsa('img').forEach(img=>{
-    const src=img.getAttribute('src')||'';
-    const art=artwork.find(item=>src.endsWith(item.from));
-    if(!art)return;
-    img.src=art.to;img.width=art.width;img.height=art.height;img.alt=art.alt;img.decoding='async';
-    if(art.priority){img.loading='eager';img.fetchPriority='high'}else{img.loading='lazy'}
-  });
-
-  const artStyle=document.createElement('style');
-  artStyle.textContent=`
-    img[src$="propsecure-hero-custom.webp"],img[src$="propsecure-documents-custom.webp"],img[src$="propsecure-portfolio-custom.webp"]{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
-    .hero-visual figure{background:#031226!important;border-color:rgba(88,151,247,.34)!important;box-shadow:0 34px 90px rgba(0,0,0,.42),0 0 54px rgba(37,99,235,.12)!important}
-    .hero-visual figure img{aspect-ratio:16/9!important;object-fit:cover!important}
-    .hero-visual figcaption{background:rgba(3,18,38,.9)!important;border-color:rgba(107,165,255,.24)!important}
-    .figure-card{position:relative;background:#04152c!important;border-color:#173f70!important;box-shadow:0 26px 70px rgba(7,26,51,.18)!important}
-    .figure-card img{aspect-ratio:16/9!important;object-fit:cover!important}
-    .figure-card figcaption{border-top:1px solid rgba(112,165,238,.18)!important;background:#071a33!important;color:#fff!important;padding:15px 17px!important}
-    .figure-card figcaption span{color:#79a9e8!important}.figure-card figcaption strong{color:#fff!important}
-    .portfolio-figure{background:#04152c!important;border-color:rgba(97,151,236,.3)!important;box-shadow:0 30px 80px rgba(0,0,0,.34)!important}
-    .portfolio-figure img{aspect-ratio:16/9!important;object-fit:cover!important}
-    .workflow-art-v2{position:relative;margin:30px 0 34px;border:1px solid rgba(97,151,236,.32);border-radius:24px;overflow:hidden;background:#04152c;box-shadow:0 28px 78px rgba(0,0,0,.34)}
-    .workflow-art-v2 img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
-    .workflow-art-v2 figcaption{position:absolute;left:18px;right:18px;bottom:18px;display:flex;align-items:flex-end;justify-content:space-between;gap:20px;padding:14px 16px;border:1px solid rgba(125,177,255,.22);border-radius:13px;background:rgba(5,19,41,.88);backdrop-filter:blur(12px);box-shadow:0 12px 34px rgba(0,0,0,.22)}
-    .workflow-art-v2 figcaption span{color:#77aaff;font:900 8px/1.35 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.13em;white-space:nowrap}
-    .workflow-art-v2 figcaption strong{max-width:650px;color:#fff;font-size:15px;line-height:1.35;text-align:right}
-    @media(max-width:720px){
-      .hero-visual figure,.figure-card,.portfolio-figure,.workflow-art-v2{border-radius:17px!important}
-      .hero-visual figcaption,.figure-card figcaption,.workflow-art-v2 figcaption{position:static!important;display:block!important;border-left:0!important;border-right:0!important;border-bottom:0!important;border-radius:0!important;background:#071a33!important}
-      .hero-visual figcaption strong,.figure-card figcaption strong,.workflow-art-v2 figcaption strong{display:block;margin-top:5px;text-align:left!important}
-    }
-  `;
-  document.head.appendChild(artStyle);
-
-  const labTarget=qs('[data-lab]');
-  const labShell=labTarget?.closest('.lab-shell')||labTarget;
-  const demo=qs('#demo');
-  if(demo&&labShell&&!qs('.workflow-art-v2',demo)){
-    const figure=document.createElement('figure');
-    figure.className='workflow-art-v2';
-    figure.setAttribute('data-reveal','');
-    figure.innerHTML='<img src="/assets/propsecure-workflow-custom.webp" width="1024" height="576" loading="lazy" decoding="async" alt="PropSecure decision engine aggregating recorder events, liens, pre-foreclosure, public-record flags, and permit signals into an actionable property risk workflow"><figcaption><span>PROPSECURE / DECISION ENGINE</span><strong>Signals become evidence-backed actions—not another alert feed.</strong></figcaption>';
-    labShell.before(figure);
-  }
-
   const year=qs('#year');if(year)year.textContent=new Date().getFullYear();
   const menu=qs('[data-menu]'),nav=qs('.navlinks');if(menu&&nav){menu.addEventListener('click',()=>{nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(nav.classList.contains('open')))});qsa('.navlinks a,.navlinks button').forEach(el=>el.addEventListener('click',()=>nav.classList.remove('open')))}
   const modal=qs('#modal');
