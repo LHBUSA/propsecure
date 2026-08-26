@@ -4,17 +4,17 @@
   // Replace the legacy SVG illustrations with verified custom WebP artwork.
   // Versioned URLs intentionally bypass any browser/CDN cache of the previously broken binaries.
   const artwork=[
-    {from:'propsecure-hero-property.svg',to:'/assets/propsecure-hero-custom.webp?v=20260826a',alt:'PropSecure continuously monitoring a protected property across parcel, document, market, and risk signals',priority:true},
-    {from:'propsecure-evidence-chain.svg',to:'/assets/propsecure-documents-custom.webp?v=20260826a',alt:'PropSecure connecting deed, title, mortgage, and official-record evidence to a monitored property'},
-    {from:'propsecure-portfolio-watch.svg',to:'/assets/propsecure-portfolio-custom.webp?v=20260826a',alt:'PropSecure portfolio surveillance monitoring multiple properties and surfacing material risk events'}
+    {from:'propsecure-hero-property.svg',to:'/assets/propsecure-hero-custom.webp?v=20260826c',alt:'PropSecure continuously monitoring a protected property across parcel, document, market, and risk signals',priority:true},
+    {from:'propsecure-evidence-chain.svg',to:'/assets/propsecure-documents-custom.webp?v=20260826c',alt:'PropSecure connecting deed, title, mortgage, and official-record evidence to a monitored property'},
+    {from:'propsecure-portfolio-watch.svg',to:'/assets/propsecure-portfolio-custom.webp?v=20260826c',alt:'PropSecure portfolio surveillance monitoring multiple properties and surfacing material risk events'}
   ];
   qsa('img').forEach(img=>{
     const src=img.getAttribute('src')||'';
     const art=artwork.find(item=>src.includes(item.from));
     if(!art)return;
     img.src=art.to;
-    img.width=1024;
-    img.height=576;
+    img.width=640;
+    img.height=360;
     img.alt=art.alt;
     img.decoding='async';
     img.style.aspectRatio='16 / 9';
@@ -39,7 +39,7 @@
     const figure=document.createElement('figure');
     figure.className='workflow-art-v3';
     figure.setAttribute('data-reveal','');
-    figure.innerHTML='<img src="/assets/propsecure-workflow-custom.webp?v=20260826a" width="1024" height="576" loading="lazy" decoding="async" alt="PropSecure decision engine aggregating recorder events, liens, pre-foreclosure, public-record flags, and permit signals into an actionable property risk workflow"><figcaption><span>PROPSECURE / DECISION ENGINE</span><strong>Signals become evidence-backed actions—not another alert feed.</strong></figcaption>';
+    figure.innerHTML='<img src="/assets/propsecure-workflow-custom.webp?v=20260826c" width="640" height="360" loading="lazy" decoding="async" alt="PropSecure decision engine aggregating recorder events, liens, pre-foreclosure, public-record flags, and permit signals into an actionable property risk workflow"><figcaption><span>PROPSECURE / DECISION ENGINE</span><strong>Signals become evidence-backed actions—not another alert feed.</strong></figcaption>';
     labShell.before(figure);
   }
 
