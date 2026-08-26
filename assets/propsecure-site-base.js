@@ -1,47 +1,9 @@
 (()=>{
   const qs=(s,r=document)=>r.querySelector(s),qsa=(s,r=document)=>[...r.querySelectorAll(s)];
 
-  // Replace the legacy SVG illustrations with verified custom WebP artwork.
-  // Versioned URLs intentionally bypass any browser/CDN cache of the previously broken binaries.
-  const artwork=[
-    {from:'propsecure-hero-property.svg',to:'/assets/propsecure-hero-custom.webp?v=20260826c',alt:'PropSecure continuously monitoring a protected property across parcel, document, market, and risk signals',priority:true},
-    {from:'propsecure-evidence-chain.svg',to:'/assets/propsecure-documents-custom.webp?v=20260826c',alt:'PropSecure connecting deed, title, mortgage, and official-record evidence to a monitored property'},
-    {from:'propsecure-portfolio-watch.svg',to:'/assets/propsecure-portfolio-custom.webp?v=20260826c',alt:'PropSecure portfolio surveillance monitoring multiple properties and surfacing material risk events'}
-  ];
-  qsa('img').forEach(img=>{
-    const src=img.getAttribute('src')||'';
-    const art=artwork.find(item=>src.includes(item.from));
-    if(!art)return;
-    img.src=art.to;
-    img.width=640;
-    img.height=360;
-    img.alt=art.alt;
-    img.decoding='async';
-    img.style.aspectRatio='16 / 9';
-    img.style.objectFit='cover';
-    if(art.priority){img.loading='eager';img.fetchPriority='high'}else{img.loading='lazy'}
-  });
-
-  const labTarget=qs('[data-lab]');
-  const labShell=labTarget?.closest('.lab-shell')||labTarget;
-  const demo=qs('#demo');
-  if(demo&&labShell&&!qs('.workflow-art-v3',demo)){
-    const style=document.createElement('style');
-    style.textContent=`
-      .workflow-art-v3{position:relative;margin:0 0 28px;overflow:hidden;border:1px solid rgba(96,165,250,.22);border-radius:24px;background:#04152c;box-shadow:0 28px 76px rgba(0,0,0,.28)}
-      .workflow-art-v3 img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
-      .workflow-art-v3 figcaption{position:absolute;left:18px;right:18px;bottom:18px;display:flex;align-items:flex-end;justify-content:space-between;gap:16px;padding:13px 15px;border:1px solid rgba(125,177,255,.2);border-radius:13px;background:rgba(5,19,41,.88);backdrop-filter:blur(12px)}
-      .workflow-art-v3 figcaption span{color:#77aaff;font:900 8px/1.35 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.12em}
-      .workflow-art-v3 figcaption strong{max-width:650px;color:#fff;font-size:14px;line-height:1.35;text-align:right}
-      @media(max-width:720px){.workflow-art-v3{border-radius:17px}.workflow-art-v3 figcaption{position:static;display:block;border:0;border-radius:0;background:#071a33}.workflow-art-v3 figcaption strong{display:block;margin-top:5px;text-align:left}}
-    `;
-    document.head.appendChild(style);
-    const figure=document.createElement('figure');
-    figure.className='workflow-art-v3';
-    figure.setAttribute('data-reveal','');
-    figure.innerHTML='<img src="/assets/propsecure-workflow-custom.webp?v=20260826c" width="640" height="360" loading="lazy" decoding="async" alt="PropSecure decision engine aggregating recorder events, liens, pre-foreclosure, public-record flags, and permit signals into an actionable property risk workflow"><figcaption><span>PROPSECURE / DECISION ENGINE</span><strong>Signals become evidence-backed actions—not another alert feed.</strong></figcaption>';
-    labShell.before(figure);
-  }
+  // Keep the artwork declared directly in index.html. Do not replace working
+  // repository assets at runtime. This prevents corrupt or stale binary swaps
+  // from blanking the hero and supporting visuals.
 
   const year=qs('#year');if(year)year.textContent=new Date().getFullYear();
   const menu=qs('[data-menu]'),nav=qs('.navlinks');if(menu&&nav){menu.addEventListener('click',()=>{nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(nav.classList.contains('open')))});qsa('.navlinks a,.navlinks button').forEach(el=>el.addEventListener('click',()=>nav.classList.remove('open')))}
