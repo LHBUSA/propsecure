@@ -5,6 +5,10 @@
   "functions": {
     "api/waitlist.js": {
       "maxDuration": 10
+    },
+    "api/art.js": {
+      "maxDuration": 10,
+      "includeFiles": "assets/art/**"
     }
   },
   "headers": [
